@@ -1,0 +1,32 @@
+v-bind: Enlaza dinámicamente atributos HTML con valores de la instancia de Vue.
+
+html
+<img v-bind:src="imagenUrl">
+v-model: Crea una vinculación bidireccional entre un input y una variable.
+
+html
+<input v-model="nombre">
+v-if / v-else / v-show: Controlan la visibilidad de elementos en función de una condición.
+
+html
+<p v-if="mostrar">Este texto se muestra si `mostrar` es verdadero.</p>
+v-for: Itera sobre listas y genera elementos dinámicamente.
+
+html
+<ul>
+  <li v-for="item in lista" :key="item.id">{{ item.nombre }}</li>
+</ul>
+v-on: Maneja eventos como clics o cambios.
+
+html
+<button v-on:click="saludar">Haz clic</button>
+v-slot: Se usa para trabajar con slots en componentes.
+
+html
+<template v-slot:header>
+  <h1>Encabezado personalizado</h1>
+</template>
+v-html: Renderiza contenido HTML dentro de un elemento.
+
+html
+<div v-html="codigoHTML"></div>
