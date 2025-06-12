@@ -1,5 +1,5 @@
-<template>
-    <section class="contener-Ipgatunas" id="ip-gatunas">
+<template >
+    <section class="contener-Ipgatunas" >
         <div class="contener-input-ip">
             <label for="ip">Ingresa la cadena de jueguetes</label>
             <br/>
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref } from "vue";
 
 const showTooltip = ref(false);
 const cadenaJuguetes = ref(""); 
@@ -30,6 +30,12 @@ const validarCadena = () => {
     resultados.value = construirCasitas(String(cadenaJuguetes.value)).length > 0 
         ? construirCasitas(String(cadenaJuguetes.value)).join(" | ") 
         : "No hay combinaciones válidas";
+    
+    cadenaJuguetes.value = ""; // Limpiar el input después de validar
+    
+    setTimeout(() => {
+        showTooltip.value = false; // Ocultar el tooltip después de un tiempo
+    }, 10000); // Cambia el tiempo según sea necesario    
 };
 
 
@@ -65,12 +71,10 @@ function construirCasitas(cadena="") {
 
     combinaciones(0, []);
     return resultados;
+    
 };
 
-watch([cadenaJuguetes, resultados], ([nuevoCadena, nuevoResultados]) => {
-    console.log("cadenaJuguetes:", nuevoCadena);
-    console.log("resultados:", nuevoResultados);
-});
+
 </script>
 
 
@@ -131,7 +135,7 @@ watch([cadenaJuguetes, resultados], ([nuevoCadena, nuevoResultados]) => {
         filter: brightness(80) saturate(80%);
 
       
-    }
+    } 
 
     .contener-Ipgatunas button {
         cursor: pointer;
@@ -144,7 +148,7 @@ watch([cadenaJuguetes, resultados], ([nuevoCadena, nuevoResultados]) => {
         color: var(--glow-color);
         font-size: 15px;
         font-weight: bold;
-     
+        background-color: var(--btn-color);
         border-radius: 1em;
         outline: none;
         box-shadow: 0 0 1em .25em var(--glow-color),

@@ -9,8 +9,8 @@
                 <div class="contener-link">
                     <ul>
                         <li><a href="#ip-gatunas">IP Gatunas</a></li>
-                        <li><a href="#about">Siesta Felina</a></li>
-                        <li><a href="#contact">Código Felino </a></li>
+                        <li><a href="#siesta-felina">Siesta Felina</a></li>
+                        <li><a href="#codigo-felino">Código Felino </a></li>
                     </ul>
                 </div>
             </div>
@@ -22,9 +22,7 @@
 
 <script>
 
-export default {
-  name: "MyComponent",
-};
+
 </script>
 
 <style scoped>
