@@ -21,8 +21,13 @@
                 </li>
             </ul>
         </div>
-        <div class="codigoDecifrado">
-            {{ decifrado.value[0] }}
+        <div class="codigoDecifrado" id="codigo-felino">
+            <ul v-for="(item, index) in decifrado " :key="index">
+                <li> 
+                    {{ item }} <span>✔️</span>
+                </li>
+            </ul>
+            
         </div>
     </section>
 </template>
@@ -33,7 +38,7 @@ const diccionario = ref([])
 const palabra = ref("") 
 const maullido= ref("") 
 
-const decifrado =ref([])
+const decifrado =ref([]) 
 
 
 const Añadir= ()=>{
@@ -44,12 +49,11 @@ const Añadir= ()=>{
 }
 
 const decifrar= ()=> {
-    decifrado.value = descifrarMaullido(diccionario.value, maullido.value);
+    const resultado = descifrarMaullido(diccionario.value, maullido.value);
+    decifrado.value = resultado.length ? resultado : ["No se encontró un descifrado válido"];
+};
 
-
-}
-
-var descifrarMaullido = (diccionarioFelino, maullido) => {
+ var descifrarMaullido = (diccionarioFelino, maullido) => {
     const diccionarioSet = new Set(diccionarioFelino);
     const memo = new Map();
 
@@ -74,14 +78,16 @@ var descifrarMaullido = (diccionarioFelino, maullido) => {
     };
 
     return backtrack(0);
-};
+}; 
 </script>
 
 <style scoped>
     .contenerCodigofelino{
+        
         width: 95%;
         height: 84vh;
        
+        margin: 0 auto;
         background-color: transparent;
         
 

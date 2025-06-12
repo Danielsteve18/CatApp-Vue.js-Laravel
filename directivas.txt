@@ -2,6 +2,7 @@ v-bind: Enlaza dinámicamente atributos HTML con valores de la instancia de Vue.
 
 html
 <img v-bind:src="imagenUrl">
+
 v-model: Crea una vinculación bidireccional entre un input y una variable.
 
 html

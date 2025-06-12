@@ -19,8 +19,17 @@
           </h2> 
         </div>
         <div class="contener-button">
-          <button class="Auth"> <span>Iniciar Sesión</span></button>
-          <button class="Auth"> <span>Registrarse</span></button>
+          <routerLink to="/singin">
+            <button class="Auth"> 
+              <routerLink to="/Login"> </routerLink>
+              <span>Iniciar Sesión</span>
+            </button>
+          </routerLink> 
+          <routerLink to="/singin"> 
+            <button class="Auth">
+              <span>Registrarse</span>
+            </button>
+          </routerLink>
         </div>
       </div>
     </div>
